@@ -14,7 +14,8 @@ public class MainMenuManager : MonoBehaviour
     public void EndGame()
     {
         Debug.Log("end game");
-        Application.Quit();
+         
+
     }
     private void Start()
     {
