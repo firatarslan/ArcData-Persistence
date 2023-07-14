@@ -23,6 +23,7 @@ public class MainMenuManager : MonoBehaviour
     public void GetPlayerList()
     {
         PlayerList myPlayerList = ScoreManager.Instance.LoadJsonData();  
+       
         foreach (var item in myPlayerList.players)
         {
             GameObject ScoreRowObj = Instantiate(scoreRowTextPrefab, scoreContainer);

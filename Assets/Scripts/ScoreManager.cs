@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using System.IO;
 using System.Collections.Generic;
-using static UnityEditor.Progress;
 using System;
 using UnityEngine.UI;
 using System.Runtime.InteropServices.ComTypes;
@@ -30,7 +29,7 @@ public class ScoreManager : MonoBehaviour
 
     public PlayerList LoadJsonData()
     {
-        string filePath = Path.Combine(Application.persistentDataPath, "SavedData.json");
+        string filePath = Application.persistentDataPath + "/savefile.json";
         if (File.Exists(filePath))
         {
             string jsonData = File.ReadAllText(filePath);
@@ -48,14 +47,14 @@ public class ScoreManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("No file in : " + filePath);
+            Debug.LogError("not file have : " + filePath);
             return null;
         }
     }
     public void SaveJsonData(List<PlayerData> newPlayers)
     {
-        string filePath = Path.Combine(Application.persistentDataPath, "SavedData.json");
-        
+        string filePath = Application.persistentDataPath + "/savefile.json";
+
         //TODO:make method sort and remove maxPlayerCount
         newPlayers.Sort((a, b) => b.playerScore.CompareTo(a.playerScore));
         while (newPlayers.Count > maxPlayerCount)
