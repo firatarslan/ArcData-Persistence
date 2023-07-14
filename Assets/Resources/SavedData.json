@@ -1,0 +1,28 @@
+{
+  "players": [
+    {
+      "playerName": "firat",
+      "playerScore": 5
+    },
+    {
+      "playerName": "aras",
+      "playerScore": 4
+    },
+    {
+      "playerName": "yasemin",
+      "playerScore": 3
+    },
+    {
+      "playerName": "elife",
+      "playerScore": 2
+    },
+    {
+      "playerName": "ekrem",
+      "playerScore": 9
+    },
+    {
+      "playerName": "deleteduser",
+      "playerScore": 7
+    }
+  ]
+}
