@@ -30,6 +30,20 @@ public class ScoreManager : MonoBehaviour
     public PlayerList LoadJsonData()
     {
         string filePath = Application.persistentDataPath + "/savefile.json";
+
+        if(myPlayerList.players.Count == 0)
+        {
+            for (int i = 0; i < maxPlayerCount; i++)
+            {
+                PlayerData p = new PlayerData("Empty", 0);
+                myPlayerList.players.Add(p);    
+            }
+            File.Create(filePath).Close();
+            SaveJsonData(myPlayerList.players);
+           
+            
+               }     
+        
         if (File.Exists(filePath))
         {
             string jsonData = File.ReadAllText(filePath);
